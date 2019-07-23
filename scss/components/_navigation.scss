@@ -1,3 +1,68 @@
 /* =============
     Navigation
 ============= */
+header{
+  // survival button
+  section:nth-child(2){
+
+    a:link, a:visited{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $sunflower;
+      height: 30px;
+      weight: 30px;
+      border-radius: 100px;
+      color: $black;
+
+      @include lg{
+        width: inherit;
+        height: inherit;
+        padding: 10px 20px;
+        border-radius: 20px;
+
+        i{
+          margin-right: 10px;
+        }
+      }
+    }
+
+    a:hover, a:active{
+      color:$white;
+      background-color: $black;
+    }
+  }
+  nav{
+    display: none;
+    ul{
+
+      li{
+
+      border-bottom: 1px solid $sunflower;
+
+      @include lg{
+        border-bottom: none;
+        border-right: 1px solid $black;
+        margin-right: 50px;
+      }
+
+      a:link, a:visited{
+        font-family: 'Roboto Slab', serif;
+        color: $white;
+        font-size: rem-calc(20);
+        padding-bottom: 20px 0;
+        display: inline-block;
+      }
+
+      a:hover, a:active{
+
+      }
+
+    li:last-child{
+      border: none;
+    }
+    }
+
+  }
+}
+}

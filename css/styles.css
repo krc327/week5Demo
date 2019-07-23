@@ -382,6 +382,46 @@ textarea {
 /* =============
     Navigation
 ============= */
+header section:nth-child(2) a:link, header section:nth-child(2) a:visited {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F8C832;
+  height: 30px;
+  weight: 30px;
+  border-radius: 100px;
+  color: #000; }
+  @media (min-width: 980px) {
+    header section:nth-child(2) a:link, header section:nth-child(2) a:visited {
+      width: inherit;
+      height: inherit;
+      padding: 10px 20px;
+      border-radius: 20px; }
+      header section:nth-child(2) a:link i, header section:nth-child(2) a:visited i {
+        margin-right: 10px; } }
+
+header section:nth-child(2) a:hover, header section:nth-child(2) a:active {
+  color: #fff;
+  background-color: #000; }
+
+header nav {
+  display: none; }
+  header nav ul li {
+    border-bottom: 1px solid #F8C832; }
+    @media (min-width: 980px) {
+      header nav ul li {
+        border-bottom: none;
+        border-right: 1px solid #000;
+        margin-right: 50px; } }
+    header nav ul li a:link, header nav ul li a:visited {
+      font-family: 'Roboto Slab', serif;
+      color: #fff;
+      font-size: 1.25rem;
+      padding-bottom: 20px 0;
+      display: inline-block; }
+    header nav ul li li:last-child {
+      border: none; }
+
 /* =============
     Header
 ============= */
@@ -389,7 +429,13 @@ header {
   display: grid;
   grid-template-columns: 20% auto;
   grid-template-areas: "burger survival" "nav nav";
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
   padding: 10px; }
+  @media (min-width: 980px) {
+    header {
+      grid-template-areas: "nav survival"; } }
   header section:nth-child(1) {
     padding: 10px;
     grid-area: burger; }
@@ -406,9 +452,14 @@ header {
     header section:nth-child(2) a span {
       display: none; }
   header nav {
+    display: none !important;
     padding: 10px;
     grid-area: nav;
     background-color: #222222; }
+    @media (min-width: 980px) {
+      header nav {
+        display: block !important;
+        background-color: #fff; } }
 
 /* =============
     Footer
