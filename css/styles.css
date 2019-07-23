@@ -311,6 +311,10 @@ template {
 /* =============
     Base
 ============= */
+body {
+  background-color: yellow;
+  border: 1px solid red; }
+
 h1, h2, h3, h4, h5, p, ul, figure {
   margin: 0;
   padding: 0; }
