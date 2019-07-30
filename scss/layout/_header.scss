@@ -3,18 +3,31 @@
 ============= */
 header {
     display: grid;
-    grid-template-columns: 20% auto;
+    grid-template-columns: repeat(2,1fr);
     padding: 10px;
+    position: fixed;
+    width: 100%;
+    background-color: $white;
+    z-index: 500;
 
-    nav {
-        i {
+    /*nav {
+       i {
             font-size: rem-calc(30);
             margin-top: 8px;
         }
+    }*/
+
+    section{
+      padding: 0 10px;
+      height: 100%;
+      display:flex;
+      align-items: center;
+      font-size: rem-calc(20);
     }
 
     aside {
         text-align: right;
+        padding: 10px;
 
         a:link,
         a:visited {

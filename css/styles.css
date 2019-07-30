@@ -358,6 +358,67 @@ p {
       font-size: 1.125rem; } }
 
 /* =============
+    Off Canvas
+============= */
+main {
+  position: relative;
+  z-index: 10;
+  background-color: #fff; }
+
+#off-canvas-container {
+  background-color: #000;
+  display: grid;
+  grid-template-areas: ". off-canvas .";
+  grid-template-columns: 10px auto 10px;
+  padding-top: 20px;
+  width: 200px;
+  /* If you need padding or margin on the off-canvas menu, please add it to this div */ }
+  #off-canvas-container > div {
+    grid-area: off-canvas; }
+
+#off-canvas-container[data-navigation-slide="over"], #off-canvas-container[data-navigation-slide="push"] {
+  height: 100vh;
+  position: fixed;
+  z-index: 1000; }
+
+#off-canvas-container[data-navigation-slide="under"] {
+  height: 100vh;
+  position: fixed;
+  z-index: 5; }
+
+/* left */
+#off-canvas-container[data-navigation-position='left'] {
+  left: 0;
+  top: 0; }
+
+/* right */
+#off-canvas-container[data-navigation-position='right'] {
+  right: 0;
+  top: 0; }
+
+/* ===================
+    Navigation Helpers
+ =================== */
+/* overlay */
+.js-off-canvas-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  width: 100vw;
+  height: 100%;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  /* change the color of the overlay */
+  background-color: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden; }
+
+.is-visible {
+  opacity: 1 !important;
+  visibility: visible !important; }
+
+/* =============
     Buttons
 ============= */
 /* =============
@@ -378,18 +439,85 @@ textarea {
 /* =============
     Navigation
 ============= */
+a:hover,
+a:link {
+  text-decoration: none;
+  transition: o 0.25s; }
+
+#off-canvas-container {
+  /* -------------
+        Here are the properties you can changes for the off-canvas navigation-slide
+    ------------- */
+  background-color: #000;
+  padding-top: 20px;
+  /* close btn */
+  /* close btn */ }
+  #off-canvas-container button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5625rem;
+    margin-bottom: 20px;
+    transition: 0.25s;
+    outline: none;
+    display: flex;
+    margin-left: auto; }
+  #off-canvas-container button:hover {
+    color: #F8C832; }
+  #off-canvas-container ul li {
+    border-bottom: 1px solid #F8C832;
+    text-align: right; }
+    #off-canvas-container ul li a:link,
+    #off-canvas-container ul li a:visited {
+      color: #fff;
+      padding: 20px 1% 20px;
+      display: inline-block;
+      width: 99%; }
+    #off-canvas-container ul li a:active,
+    #off-canvas-container ul li a:hover {
+      color: #000;
+      background-color: #F8C832; }
+    #off-canvas-container ul li li:last-child {
+      border: none; }
+
+#burger-icon {
+  background-color: #fff;
+  border: none;
+  font-size: 1.375rem;
+  outline: none;
+  padding: 8px;
+  transition: 0.25s; }
+
+#burger-icon:hover {
+  color: #F8C832; }
+
 /* =============
     Header
 ============= */
 header {
   display: grid;
-  grid-template-columns: 20% auto;
-  padding: 10px; }
-  header nav i {
-    font-size: 1.875rem;
-    margin-top: 8px; }
+  grid-template-columns: repeat(2, 1fr);
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  z-index: 500;
+  /*nav {
+       i {
+            font-size: rem-calc(30);
+            margin-top: 8px;
+        }
+    }*/ }
+  header section {
+    padding: 0 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem; }
   header aside {
-    text-align: right; }
+    text-align: right;
+    padding: 10px; }
     header aside a:link,
     header aside a:visited {
       background-color: #F8C832;
